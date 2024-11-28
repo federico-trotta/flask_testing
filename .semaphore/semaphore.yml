@@ -13,9 +13,6 @@ blocks:
             - echo "Installing dependencies..."
             - sudo apt-get update
             - sudo apt-get install -y python3-pip
-            - 'pip3 install flask '
-            - 'pip3 install pytest '
-            - pip3 install requests
             - echo "Dependencies installed"
       prologue:
         commands:
@@ -29,7 +26,8 @@ blocks:
         - name: Run unit tests
           commands:
             - echo "Running unit tests..."
-            - python3 tests/test_integration.py
+            - pip3 install flask
+            - python3 tests/test_unit.py
             - echo "Unit tests complete."
   - name: Run integration tests
     task:
@@ -40,6 +38,6 @@ blocks:
         - name: Run integration tests
           commands:
             - echo "Running integration tests..."
-            - pip3 install Flask
-            - pytest tests/test_unit.py
+            - pip3 install flask
+            - python3 tests/test_integration.py
             - echo "Integration tests complete."
