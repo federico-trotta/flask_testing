@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculation Result</title>
+</head>
+<body>
+    <h1>Calculation Result</h1>
+    {% if result is defined %}
+        <p>The result is: {{ result }}</p>
+    {% elif error is defined %}
+        <p style="color:red;">Error: {{ error }}</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Perform another calculation</a>
+</body>
+</html>

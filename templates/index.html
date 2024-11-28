@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator App</title>
+</head>
+<body>
+    <h1>Calculator App</h1>
+    <h2>Add Two Numbers</h2>
+    <form action="{{ url_for('calculate') }}" method="post">
+        <input type="hidden" name="operation" value="add">
+        <label for="a">First Number (a):</label>
+        <input type="text" name="a" required>
+        <label for="b">Second Number (b):</label>
+        <input type="text" name="b" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <h2>Multiply Two Numbers</h2>
+    <form action="{{ url_for('calculate') }}" method="post">
+        <input type="hidden" name="operation" value="multiply">
+        <label for="a">First Number (a):</label>
+        <input type="text" name="a" required>
+        <label for="b">Second Number (b):</label>
+        <input type="text" name="b" required>
+        <button type="submit">Multiply</button>
+    </form>
+
+    <h2>Add Two Numbers and Multiply the Result</h2>
+    <form action="{{ url_for('calculate') }}" method="post">
+        <input type="hidden" name="operation" value="add_multiply">
+        <label for="a">First Number (a):</label>
+        <input type="text" name="a" required>
+        <label for="b">Second Number (b):</label>
+        <input type="text" name="b" required>
+        <label for="c">Multiplier (c):</label>
+        <input type="text" name="c" required>
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html>
