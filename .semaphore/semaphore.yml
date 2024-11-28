@@ -41,5 +41,6 @@ blocks:
         - name: Run integration tests
           commands:
             - echo "Running integration tests..."
+            - pip3 install Flask
             - pytest tests/test_unit.py
             - echo "Integration tests complete."
