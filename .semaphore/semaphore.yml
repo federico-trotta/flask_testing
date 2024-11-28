@@ -27,7 +27,7 @@ blocks:
           commands:
             - echo "Running unit tests..."
             - pip3 install flask
-            - python3 tests/test_unit.py
+            - python3 tests/test_integration.py
             - echo "Unit tests complete."
   - name: Run integration tests
     task:
@@ -39,5 +39,5 @@ blocks:
           commands:
             - echo "Running integration tests..."
             - pip3 install flask
-            - python3 tests/test_integration.py
+            - python3 tests/test_unit.py
             - echo "Integration tests complete."
