@@ -1,0 +1,43 @@
+version: v1.0
+name: Initial Pipeline
+agent:
+  machine:
+    type: f1-standard-2
+    os_image: ubuntu2204
+blocks:
+  - name: Installing dependencies
+    task:
+      jobs:
+        - name: Install dependencies
+          commands:
+            - echo "Installing dependencies..."
+            - sudo apt-get update
+            - sudo apt-get install -y python3-pip
+            - echo "Dependencies installed"
+      prologue:
+        commands:
+          - checkout
+  - name: Run unit tests
+    task:
+      prologue:
+        commands:
+          - checkout
+      jobs:
+        - name: Run unit tests
+          commands:
+            - echo "Running unit tests..."
+            - pip3 install flask
+            - python3 tests/test_unit.py
+            - echo "Unit tests complete."
+  - name: Run integration tests
+    task:
+      prologue:
+        commands:
+          - checkout
+      jobs:
+        - name: Run integration tests
+          commands:
+            - echo "Running integration tests..."
+            - pip3 install flask
+            - python3 tests/test_integration.py
+            - echo "Integration tests complete."
