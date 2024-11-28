@@ -25,7 +25,7 @@ blocks:
         - name: Run unit tests
           commands:
             - echo "Running unit tests..."
-            - pytest tests/test_unit.py
+            - pytest tests/test_integration.py
             - echo "Unit tests complete."
   - name: Run integration tests
     task:
@@ -36,5 +36,5 @@ blocks:
         - name: Run integration tests
           commands:
             - echo "Running integration tests..."
-            - pytest tests/test_integration.py
+            - pytest tests/test_unit.py
             - echo "Integration tests complete."
