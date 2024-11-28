@@ -13,9 +13,7 @@ blocks:
             - echo "Installing dependencies..."
             - sudo apt-get update
             - sudo apt-get install -y python3-pip
-            - python3 --version
-            - 'pip3 --version '
-            - pip install Flask pytest requests
+            - pip3 install Flask pytest requests
             - echo "Dependencies installed"
       prologue:
         commands:
