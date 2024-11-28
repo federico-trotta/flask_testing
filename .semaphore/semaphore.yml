@@ -11,6 +11,8 @@ blocks:
         - name: Install dependencies
           commands:
             - echo "Installing dependencies..."
+            - sudo apt-get update
+            - sudo apt-get install -y python3-pip
             - pip install Flask pytest requests
             - echo "Dependencies installed"
       prologue:
