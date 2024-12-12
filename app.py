@@ -2,13 +2,23 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify
 
 app = Flask(__name__)
 
+
 def add_numbers(a, b):
     """Adds two numbers and returns the result."""
+    if isinstance(a, bool) or isinstance(b, bool):
+        raise TypeError("Boolean values are not allowed")
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("Both inputs must be int or float")
     return a + b
 
 def multiply_numbers(a, b):
     """Multiplies two numbers and returns the result."""
+    if isinstance(a, bool) or isinstance(b, bool):
+        raise TypeError("Boolean values are not allowed")
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("Both inputs must be int or float")
     return a * b
+
 
 @app.route('/')
 def index():
